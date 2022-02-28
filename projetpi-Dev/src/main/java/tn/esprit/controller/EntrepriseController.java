@@ -47,7 +47,7 @@ public class EntrepriseController {
 	   }
 	
 	@GetMapping("/retrieveEntreprise/{EntrepriseId}")
-	   public Entreprise retrieveClient(@PathVariable("EntrepriseId") Long id) {
+	   public Entreprise retrieveEntreprise(@PathVariable("EntrepriseId") Long id) {
 		   	return entres.retrieveEntreprise(id); 
 	   }
 	

@@ -23,25 +23,25 @@ public class EntrepriseServiceImp implements EntrepriseService {
 
 	@Override
 	public Entreprise Modifentreprise(Long id, Entreprise e ) {
-		Entreprise e_change = entrepriserepo.findById(id).get();
-		e_change.setAdresse(e.getAdresse());
-		e_change.setCategorie(e.getCategorie());
-		e_change.setContact(e.getContact());
-		e_change.setNom(e.getNom());
-		entrepriserepo.save(e_change);
+		Entreprise e1 = entrepriserepo.findById(id).get();
+		e1.setAdresse(e.getAdresse());
+		e1.setCategorie(e.getCategorie());
+		e1.setContact(e.getContact());
+		e1.setNom(e.getNom());
+		entrepriserepo.save(e1);
 		return e;
 	}
 
 	@Override
 	public void deleteEntreprise(Long id) {
-		// TODO Auto-generated method stub
+		
 		entrepriserepo.deleteById(id);
 		
 	}
 
 	@Override
 	public List<Entreprise> retrieveAllEntreprise() {
-		// TODO Auto-generated method stub
+		
 		List<Entreprise> entreprises = new ArrayList<Entreprise>(); 
 		entreprises = (List<Entreprise>) entrepriserepo.findAll(); 
 		
@@ -49,7 +49,7 @@ public class EntrepriseServiceImp implements EntrepriseService {
 		return entreprises;
 	}
 
-	@Override+
+	@Override
 	public Entreprise retrieveEntreprise(Long id) {
 		// TODO Auto-generated method stub
 		

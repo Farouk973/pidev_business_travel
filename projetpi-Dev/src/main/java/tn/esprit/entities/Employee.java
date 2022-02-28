@@ -1,7 +1,7 @@
 package tn.esprit.entities;
 
 import java.io.Serializable;
-import java.util.Set;
+
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -10,7 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+
+
 
 
 @Entity
@@ -24,15 +25,26 @@ public class Employee implements Serializable {
 	private int experience;
 	private String age;
 	private String telephone;
-	private long cin;
+	private Long cin;
 	private String adresse;
+	
 	private String email;
 	@ManyToOne(cascade = CascadeType.ALL)
 	private Entreprise entreprise;
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Invitation invitation;
+	
+	
+	public Invitation getInvitation() {
+		return invitation;
+	}
+	public void setInvitation(Invitation invitation) {
+		this.invitation = invitation;
+	}
 	public long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getNom() {
@@ -68,7 +80,7 @@ public class Employee implements Serializable {
 	public long getCin() {
 		return cin;
 	}
-	public void setCin(long cin) {
+	public void setCin(Long cin) {
 		this.cin = cin;
 	}
 	public String getAdresse() {
@@ -89,7 +101,7 @@ public class Employee implements Serializable {
 	public void setEntreprise(Entreprise entreprise) {
 		this.entreprise = entreprise;
 	}
-	public Employee(long id, String nom, String prenom, int experience, String age, String telephone, long cin,
+	public Employee(Long id, String nom, String prenom, int experience, String age, String telephone, Long cin,
 			String adresse, String email, Entreprise entreprise) {
 		super();
 		this.id = id;

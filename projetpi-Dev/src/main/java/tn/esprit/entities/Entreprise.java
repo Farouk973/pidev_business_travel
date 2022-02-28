@@ -1,6 +1,7 @@
 package tn.esprit.entities;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -23,11 +24,13 @@ public class Entreprise implements Serializable {
 	private String adresse;
 	private String contact;
 	@OneToMany(cascade = CascadeType.ALL , mappedBy="entreprise")
-	private Set<Employee> employees;
-	public long getId() {
+	private List<Employee> employees;
+	
+	
+	public Long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getNom() {
@@ -54,14 +57,14 @@ public class Entreprise implements Serializable {
 	public void setContact(String contact) {
 		this.contact = contact;
 	}
-	public Set<Employee> getEmployees() {
+	public List<Employee> getEmployees() {
 		return employees;
 	}
-	public void setEmployees(Set<Employee> employees) {
+	public void setEmployees(List<Employee> employees) {
 		this.employees = employees;
 	}
-	public Entreprise(long id, String nom, String categorie, String adresse, String contact,
-			Set<Employee> employees) {
+	public Entreprise(Long id, String nom, String categorie, String adresse, String contact,
+			List<Employee> employees) {
 		super();
 		this.id = id;
 		this.nom = nom;
