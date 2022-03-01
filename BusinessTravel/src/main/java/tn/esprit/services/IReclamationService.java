@@ -10,7 +10,6 @@ public interface IReclamationService {
 
 	
 
-	void save(Reclamation reclamation);
 	
 	List<Reclamation> listAll();
 
@@ -19,8 +18,12 @@ public interface IReclamationService {
 
 	void delete(Long id);
 
-	
+	void save(Reclamation reclamation);
 
+
+	Reclamation Update(Reclamation reclamation);
+
+	void ajouterEtaffecterListeReclamation(List<Reclamation> lb, Long idemployee);
 	
 
 

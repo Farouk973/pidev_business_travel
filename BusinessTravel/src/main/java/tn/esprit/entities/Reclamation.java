@@ -1,6 +1,8 @@
 package tn.esprit.entities;
 
 import java.io.Serializable;
+
+
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -41,11 +43,11 @@ import tn.esprit.entities.Employee;
 	private String reclam;
 	@Column
 	private String mail;
-	@Column
 	@Enumerated(EnumType.STRING)
 	private Genre genre;
 	@Column
 	@Temporal(TemporalType.DATE)
+	
 	private Date date_reclam;
 	@ManyToOne
 	private Employee employee;
